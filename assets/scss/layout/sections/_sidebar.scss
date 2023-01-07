@@ -1,0 +1,49 @@
+.sidebar {
+  $width-left: 280px;
+
+  @include _flexbox();
+  overflow: hidden;
+
+  &__left {
+    width: $width-left;
+    position: relative;
+  }
+
+  &__right {
+    width: calc(100% - #{$width-left});
+    padding: 43px 50px 32px 48px;
+    position: relative;
+
+    &-fixcontent {
+      max-width: 1544px;
+    }
+
+  }
+
+  &__controls {
+    position: absolute;
+    z-index: 98;
+    @include _flexinline();
+    top: 0;
+    right: 0;
+
+    &-item {
+      $size: 54px;
+
+      width: $size;
+      height: $size;
+      background-color: $color-white;
+      @include _flexbox();
+      @include _align-items(center);
+      @include _justify-content(center);
+    }
+
+    > * {
+
+      &:not(:last-child) {
+        margin-right: 2px;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,64 @@
+@import url('../css/plugins/swiper-bundle.min.css');
+
+/**
+ * Variables
+ */
+@import "base/variables";
+
+/**
+ * Global
+ */
+@import "base/mixins";
+@import "base/mixins-media";
+@import "base/mixins-flexbox";
+@import "base/base";
+@import "base/normalize";
+@import "base/fonts";
+@import "base/keyframes";
+
+/**
+ * Modules
+ */
+@import "modules/btn";
+
+/**
+ * Layout
+ */
+@import "layout/sections/header";
+@import "layout/sections/footer";
+@import "layout/sections/sidebar";
+@import "layout/sections/nav";
+@import "layout/sections/title_page";
+@import "layout/sections/widgets";
+@import "layout/sections/widget";
+@import "layout/sections/dropdown";
+@import "layout/sections/accordion";
+@import "layout/sections/linkes";
+@import "layout/sections/tabs";
+@import "layout/sections/scroll_line";
+@import "layout/sections/modal/index";
+
+@import "layout/sections/widgets/w_medications";
+@import "layout/sections/widgets/w_labs";
+@import "layout/sections/widgets/w_history";
+@import "layout/sections/widgets/w_signs";
+@import "layout/sections/widgets/w_imaging";
+@import "layout/sections/widgets/w_patient";
+@import "layout/sections/widgets/w_years";
+@import "layout/sections/widgets/w_hours";
+@import "layout/sections/widgets/w_days";
+@import "layout/sections/widgets/w_weeks";
+@import "layout/sections/widgets/w_months";
+
+
+
+/**
+ * Pages
+ */
+@import "layout/page/home/index";
+@import "layout/page/labs/index";
+@import "layout/page/history/index";
+
+@import "base/utilities";
+
+

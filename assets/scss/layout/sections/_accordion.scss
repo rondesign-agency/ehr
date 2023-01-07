@@ -1,0 +1,59 @@
+.accordion {
+  $offset-bottom: 20px;
+
+  > li {
+
+    &:not(:last-child) {
+      margin-bottom: $offset-bottom;
+    }
+  }
+
+  &__item {
+
+    &-title {
+      position: relative;
+
+      &::after {
+        $size: 25px;
+
+        content: '';
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: $size;
+        height: $size;
+        background: url("../images/icons/accordion/arrow.svg") center center no-repeat;
+        transition: all 0.2s linear;
+      }
+    }
+
+    &-body {
+      display: none;
+      padding: 30px 30px calc(30px - #{$offset-bottom}) 30px
+    }
+
+    &.active {
+
+      .accordion__item {
+
+        &-title {
+
+          &::after {
+            transform: translateY(-50%) rotate(180deg);
+          }
+
+        }
+
+        &-body {
+          display: block;
+          -webkit-animation: animation-show-block 1.3s;
+          animation: animation-show-block 1.3s;
+        }
+      }
+    }
+
+  }
+
+}

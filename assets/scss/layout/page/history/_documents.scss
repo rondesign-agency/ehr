@@ -1,0 +1,53 @@
+.history {
+
+  &__documents {
+
+    &-headpanel {
+      background-color: $color-white;
+      padding: 0px 60px 0 50px;
+      height: 100px;
+      @include _flexbox();
+      @include _align-items(center);
+      @include _justify-content(space-between);
+
+      &--title {
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 1.4;
+        color: #2A2A2A;
+        margin: 0;
+      }
+
+      &--order {
+        @include _flexbox();
+        @include _align-items(flex-end);
+        @include _align-items(center);
+
+        &---item {
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 1.1;
+          color: $color-black;
+        }
+
+        > * {
+          &:not(:last-child) {
+            margin-right: 60px;
+          }
+        }
+      }
+    }
+
+    &-container {
+      @include scrollbar();
+      overflow: auto;
+      height: calc(100vh - 260px);
+      background: $color-gray-light;
+      backdrop-filter: blur(17.7015px);
+      padding: 70px 60px 0px 50px;
+    }
+
+  }
+
+
+}

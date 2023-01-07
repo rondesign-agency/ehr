@@ -1,0 +1,42 @@
+.w_weeks {
+  @extend .w_years;
+
+  &__swiper {
+    @extend .w_years__swiper;
+  }
+
+  &__wrapper {
+    @extend .w_years__wrapper;
+
+    &-slide {
+      @extend .w_years__wrapper-slide;
+    }
+
+  }
+
+  &__container {
+    @extend .w_years__container;
+
+    &-list {
+      @extend .w_years__container-list;
+
+      &--item {
+        @extend .w_years__container-list--item;
+
+        &::after {
+          opacity: 1 !important;
+          visibility: visible;
+        }
+
+      }
+
+      &--title {
+        @extend .w_years__container-list--title;
+      }
+
+    }
+
+
+  }
+
+}

@@ -1,0 +1,18 @@
+.history {
+
+  &__row {
+    @include _flexbox();
+    width: 100%;
+    padding-top: 30px;
+
+    &-left {
+      width: 50%;
+    }
+
+    &-right {
+      width: 50%;
+    }
+
+  }
+
+}

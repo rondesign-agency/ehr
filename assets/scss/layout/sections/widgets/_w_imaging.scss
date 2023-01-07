@@ -1,0 +1,179 @@
+.w_imaging {
+  $height: 230px;
+
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+
+    &-slide {
+      width: auto;
+      height: auto;
+    }
+  }
+
+  &__container {
+    height: $height;
+    position: relative;
+    width: auto;
+    margin: 15px 0 30px 0;
+
+    &-scroll {
+
+    }
+
+    &-list {
+      @include _flexbox();
+      direction: ltr;
+
+      > li {
+        width: 100px;
+        height: $height;
+        position: relative;
+        transition: all 0.2s linear;
+
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 1px;
+          bottom: 0;
+          border-right: 1px solid $color-gray-light;
+          top: 35px;
+        }
+
+      }
+
+      &--title {
+        text-align: center;
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 18px;
+        color: $color-black;
+      }
+
+      &[data-zoom-level="0"] {
+
+        > li {
+          width: 40px;
+        }
+
+      }
+
+      &[data-zoom-level="1"] {
+
+        > li {
+          width: 60px;
+        }
+
+      }
+
+      &[data-zoom-level="2"] {
+
+        > li {
+          width: 80px;
+        }
+
+      }
+
+      &[data-zoom-level="4"] {
+
+        > li {
+          width: 120px;
+        }
+
+      }
+
+      &[data-zoom-level="5"] {
+
+        > li {
+          width: 140px;
+        }
+
+      }
+
+      &[data-zoom-level="6"] {
+
+        > li {
+          width: 160px;
+        }
+
+      }
+
+
+    }
+
+  }
+
+  &__card {
+    $color-text: #2A2A2A;
+
+    position: absolute;
+    z-index: 3;
+    width: 120px;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $color-white;
+    padding: 0 10px 15px 15px;
+    border: 1px solid $color-gray-light;
+    backdrop-filter: blur(17.7015px);
+
+    &.group {
+      box-shadow: 5px 5px 0px 0px rgba(236, 236, 236, 1);
+    }
+
+    &-header {
+      $width-image: 40px;
+      @include _flexbox();
+      margin: 0 0 15px 0;
+
+      &--image {
+        width: $width-image;
+      }
+
+      &--text {
+        width: calc(100% - #{$width-image});
+        font-weight: 400;
+        font-size: 12px;
+        color: $color-text;
+        padding: 10px 0 0 24px;
+      }
+
+    }
+
+    &-body {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 1.3;
+      color: $color-text;
+    }
+
+    &-badge {
+      $size: 25px;
+
+      position: absolute;
+      z-index: 4;
+      top: -#{$size + 1px};
+      right: 10px;
+      background: $color-black;
+      backdrop-filter: blur(16.3097px);
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 14px;
+      @include _flexbox();
+      @include _align-items(center);
+      @include _justify-content(center);
+      width: $size;
+      height: $size;
+      color: $color-white;
+    }
+  }
+
+}

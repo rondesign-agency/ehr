@@ -1,0 +1,71 @@
+.title_page {
+  @include _flexbox();
+  @include _align-items(center);
+  margin: 0 0 30px 0;
+
+  &__title {
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 1.5;
+    margin: 0 30px 0 0;
+    padding: 0;
+  }
+
+  &__search {
+    margin-left: auto;
+    width: 60%;
+
+    &-form {
+      $height-input: 54px;
+      $width-submit: 60px;
+
+      display: block;
+      width: 100%;
+      position: relative;
+
+      [type="submit"] {
+        position: absolute;
+        z-index: 2;
+        border: none;
+        background: url("../images/icons/search.svg") center center no-repeat;
+        padding: 0;
+        margin: 0;
+        height: $height-input;
+        left: 0;
+        top: 0;
+        width: $width-submit;
+      }
+
+      [type="text"] {
+        display: block;
+        border: none;
+        background: $color-white;
+        border-radius: 2px;
+        padding: 0 30px 0 $width-submit;
+        margin: 0;
+        width: 100%;
+        height: $height-input;
+        position: relative;
+        z-index: 1;
+        font-weight: 400;
+        font-size: 18px;
+        color: $color-black;
+
+        @include placeholder {
+          font-weight: 300;
+          color: $color-black;
+        }
+      }
+
+    }
+  }
+
+  .dropdown {
+    margin-top: 8px;
+
+    &__item {
+      padding: 0 20px 0 0;
+    }
+  }
+
+}

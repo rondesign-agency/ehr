@@ -1,0 +1,159 @@
+.history {
+
+  &__doclist {
+
+    &-row {
+      $left-width: 55px;
+
+      @include _flexbox();
+
+      &--left {
+        width: $left-width;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.1;
+      }
+
+      &--right {
+        width: calc(100% - #{$left-width});
+      }
+
+    }
+
+    &-list {
+      $offset: 25px;
+
+      position: relative;
+      margin-right: -#{$offset};
+      margin-left: -#{$offset};
+      @include _flexbox();
+      @include _flex-wrap(wrap);
+
+      > li {
+        padding: 0 $offset;
+        width: 33.32%;
+        margin-bottom: 60px;
+
+        @include media(xl) {
+          width: 50%;
+        }
+      }
+    }
+
+    &-card {
+      display: block;
+      background-color: $color-white;
+      position: relative;
+      width: 100%;
+      padding: 0 5px 20px 20px;
+
+      &.more {
+
+        &::after,
+        &::before {
+          content: '';
+          display: block;
+          position: absolute;
+          z-index: -1;
+          background: rgba(255, 255, 255, 0.5);
+          width: 100%;
+          height: 100%;
+        }
+
+        &::after {
+          $position: 6px;
+
+          top: $position;
+          left: $position;
+        }
+
+        &::before {
+          $position: 12px;
+
+          top: $position;
+          left: $position;
+        }
+      }
+
+      &--badge {
+        @extend .w_imaging__card-badge;
+      }
+
+      &--header {
+        $image-size: 60px;
+
+        @extend .w_imaging__card-header;
+        margin: 0 0 20px 0;
+
+        &---image {
+          @extend .w_imaging__card-header--image;
+          width: $image-size;
+          height: $image-size;
+          @include _flexbox();
+          @include _align-items(center);
+          @include _justify-content(center);
+
+          &.green {
+            background-color: $color-green;
+          }
+
+          &.yellow {
+            background-color: $color-yellow;
+          }
+
+          &.orange {
+            background-color: $color-orange;
+          }
+
+          &.red {
+            background-color: $color-red;
+          }
+
+          &.indigo {
+            background-color: $color-blue-indigo;
+          }
+
+          &.purple {
+            background-color: $color-purple;
+          }
+        }
+
+        &---text {
+          @extend .w_imaging__card-header--text;
+          padding: 20px 0px 0 35px;
+          width: calc(100% - #{$image-size});
+        }
+      }
+
+      &--body {
+        height: 55px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.3;
+        color: #2A2A2A;
+      }
+
+      &--footer {
+        $width-photo: 25px;
+
+        @include _flexbox();
+        @include _align-items(flex-end);
+
+        &---photo {
+          width: $width-photo;
+        }
+
+        &---name {
+          width: calc(100% - #{$width-photo});
+          font-weight: 300;
+          font-size: 12px;
+          line-height: 1.3;
+          color: #2A2A2A;
+          padding: 0 0 0 10px;
+        }
+      }
+    }
+
+  }
+
+}

@@ -1,0 +1,157 @@
+.scroll_line {
+  $height: 44px;
+
+  position: relative;
+
+  &__container {
+    @include _flexbox();
+    position: relative;
+    z-index: 1;
+
+    &-buttons {
+      @include _flexbox();
+      @include _order(1);
+
+      &--btn {
+
+        @include _flexbox();
+        @include _align-items(center);
+        @include _justify-content(center);
+        width: $height;
+        height: $height;
+        background-color: $color-black;
+        color: $color-white;
+        font-size: 20px;
+        font-weight: 600;
+        transition: all 0.2s linear;
+        margin-right: 1px;
+
+        &.disabled {
+          background-color: $color-text;
+        }
+
+        &:hover {
+          background-color: $color-green;
+        }
+      }
+    }
+
+    &-panel {
+      height: $height;
+      background: $color-gray;
+      backdrop-filter: blur(13.5914px);
+      width: 100%;
+      position: relative;
+      z-index: 1;
+
+      &:hover {
+
+        .scroll_line__container-panel--list {
+          z-index: 2;
+        }
+
+        .scroll_line__handle {
+          z-index: 3;
+
+          .scroll_line__handle-drag {
+            background-image: none;
+          }
+        }
+
+      }
+
+      &--list {
+        @include _flexbox();
+        @include _justify-content(space-between);
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        padding: 0 25px;
+        position: relative;
+        z-index: 3;
+        direction: ltr;
+
+        > li {
+          position: relative;
+          height: $height;
+          padding: 8px 0 0 0;
+
+          &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            height: 12px;
+            width: 1px;
+            border-right: 1px dashed $color-black;
+          }
+
+        }
+      }
+    }
+
+  }
+
+  &__handle {
+    $offset-left: 90px;
+
+    left: 0;
+    right: 0;
+    width: 100%;
+    bottom: 0;
+    border-radius: unset;
+    background-color: transparent;
+    position: absolute;
+    z-index: 2;
+    height: $height;
+
+    &-drag {
+      height: 100%;
+      border: 1px solid $color-black;
+      position: relative;
+      background: transparent url("../images/icons/drag/pattern.png") center center repeat-x;
+      transition: all 0.2s linear;
+
+      &:hover {
+        cursor: move;
+      }
+
+      &::after,
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 9px;
+        top: 0;
+        bottom: 0;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-color: $color-black;
+        transition: all 0.2s linear;
+      }
+
+      &::after {
+        right: 0;
+        background-image: url("../images/icons/drag/arrow-right.svg");
+      }
+
+      &::before {
+        left: 0;
+        background-image: url("../images/icons/drag/arrow-left.svg");
+      }
+
+      &:hover {
+        &::after,
+        &::before {
+
+        }
+      }
+
+    }
+
+
+  }
+
+}

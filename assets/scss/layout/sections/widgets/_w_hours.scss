@@ -1,0 +1,114 @@
+.w_hours {
+  @extend .w_years;
+
+  &__swiper {
+    @extend .w_years__swiper;
+  }
+
+  &__wrapper {
+    @extend .w_years__wrapper;
+
+    &-slide {
+      @extend .w_years__wrapper-slide;
+    }
+
+  }
+
+  &__container {
+    @extend .w_years__container;
+
+    &-list {
+      @extend .w_years__container-list;
+
+      &--item {
+        @extend .w_years__container-list--item;
+        width: 108px;
+
+        &::after {
+          opacity: 1 !important;
+          visibility: visible;
+        }
+
+      }
+
+      &--title {
+        @extend .w_years__container-list--title;
+      }
+
+      &--events {
+        position: absolute;
+        top: 35px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        &--item {
+          $size: 26px;
+
+          width: $size;
+          height: $size;
+          position: absolute;
+          z-index: 6;
+          left: 50%;
+          transform: translateX(-50%);
+          @include _flexbox();
+          @include _align-items(center);
+          @include _justify-content(center);
+
+          &.green {
+            background-color: $color-green;
+            top: 5%;
+          }
+
+          &.red {
+            background-color: $color-red;
+            top: 25%;
+
+          }
+
+          &.blue {
+            background-color: $color-blue;
+            top: 65%;
+          }
+
+          &.purple {
+            background-color: $color-purple;
+            top: 85%;
+          }
+
+          &.orange {
+            background-color: $color-orange;
+            top: 28%;
+          }
+
+          &.yellow {
+            background-color: $color-yellow;
+            top: 48%;
+          }
+
+          &---title {
+            white-space: nowrap;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            bottom: 0;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 1.2;
+            color: $color-black;
+            backdrop-filter: blur(13.5914px);
+            background-color: $color-gray;
+            @include _flexbox();
+            @include _align-items(center);
+            padding: 0 6px;
+          }
+        }
+
+      }
+
+    }
+
+
+  }
+
+}

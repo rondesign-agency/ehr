@@ -1,0 +1,26 @@
+.tabs {
+
+  &-list {
+
+  }
+
+  &-content {
+
+    &-item {
+      display: none;
+
+      > * {
+        //transition: all 02s linear;
+        //opacity: 0;
+      }
+
+      &.active {
+        display: block;
+        -webkit-animation: animation-show-block 1.3s;
+        animation: animation-show-block 1.3s;
+      }
+    }
+  }
+}
+
+

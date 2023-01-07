@@ -1,0 +1,40 @@
+.widgets {
+
+  &__row {
+    $gutter: 10px;
+
+    position: relative;
+    margin-left: -#{$gutter};
+    margin-right: -#{$gutter};
+    @include _flexbox();
+    @include _flex-wrap(wrap);
+
+    &-col {
+      padding: 0 $gutter;
+      margin-bottom: calc($gutter * 2);
+      @include _flexbox();
+      @include _flex-direction('column');
+
+      &.col {
+
+        &-12 {
+          width: 100%;
+        }
+
+        &-6 {
+          width: 50%;
+        }
+
+        &-5 {
+          width: 40%;
+        }
+
+        &-7 {
+          width: 60%;
+        }
+
+      }
+
+    }
+  }
+}

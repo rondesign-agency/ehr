@@ -1,0 +1,111 @@
+.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.invisible {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.disabled {
+    pointer-events: none;
+}
+
+.visible-mobile {
+    display: none;
+}
+
+@include media(sm){
+    .visible-mobile {
+        display: block;
+    }
+    .hidden-mobile{
+        display: none;
+    }
+}
+
+.h {
+    &-280 {
+        height: 280px;
+    }
+    &-330 {
+        height: 329px;
+    }
+    &-350 {
+        height: 350px;
+    }
+    &-600 {
+        height: 600px;
+    }
+}
+
+.pb {
+
+    &-0 {
+        padding-bottom: 0px;
+    }
+}
+
+.pr {
+
+    &-0 {
+        padding-right: 0px;
+    }
+
+    &-10 {
+        padding-right: 10px;
+    }
+
+}
+
+.pl {
+
+    &-0 {
+        padding-left: 0px;
+    }
+
+}
+
+.no-wrap {
+    white-space: nowrap;
+}
+
+.align {
+    &-center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.font {
+
+    &-100 {
+        font-weight: 100;
+    }
+
+    &-300 {
+        font-weight: 300;
+    }
+
+    &-500 {
+        font-weight: 500;
+    }
+
+    &-600 {
+        font-weight: 600;
+    }
+}
+
+.fsize {
+
+    &-18 {
+        font-size: 18px;
+    }
+}
+
+.width {
+    &-full {
+        max-width: none;
+    }
+}

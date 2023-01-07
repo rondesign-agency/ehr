@@ -1,0 +1,111 @@
+.widget {
+  background-color: $color-white;
+  position: relative;
+  width: 100%;
+
+  &__controls {
+    $position: 10px;
+
+    @include _flexinline();
+    @include _align-items(center);
+    position: absolute;
+    z-index: 5;
+    top: $position;
+    right: $position;
+
+    a {
+      @include _flexbox();
+      @include _align-items(center);
+      height: 15px;
+
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &__header {
+    @include _flexbox();
+    @include _align-items(center);
+    margin: 0 0 20px 0;
+    position: relative;
+    z-index: 2;
+    padding: 30px 30px 0px 30px;
+
+    &-left {
+      @include _flexbox();
+      @include _align-items(center);
+
+      &-title {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 2.5;
+        color: $color-black;
+        padding: 0;
+        margin: 0;
+        white-space: nowrap;
+
+      }
+
+      &-search {
+        $width-submit: 40px;
+        $height-input: 40px;
+
+        display: block;
+        margin: 0 0 0 15px;
+        padding: 0;
+        position: relative;
+        width: 100%;
+        max-width: 280px;
+
+        [type="submit"],
+        [type="text"] {
+          background: none;
+          padding: 0;
+          margin: 0;
+          border: none;
+          width: 100%;
+        }
+
+        [type="submit"] {
+          width: $width-submit;
+          position: absolute;
+          z-index: 2;
+          top: 0;
+          left: 0;
+          height: $height-input;
+          background: url("../images/icons/search-small.svg") center center no-repeat;
+        }
+
+        [type="text"] {
+          height: $height-input;
+          padding: 0 0 0 $width-submit;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 1.1;
+          color: $color-black;
+
+          @include placeholder {
+            font-size: 14px;
+            color: $color-black;
+            font-weight: 300;
+          }
+        }
+
+      }
+
+    }
+
+    &-right {
+      margin-left: auto;
+    }
+
+  }
+
+  &__body {
+    position: relative;
+    z-index: 1;
+    padding: 0 30px 30px 30px;
+  }
+
+}

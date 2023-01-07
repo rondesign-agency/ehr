@@ -1,0 +1,110 @@
+.w_medication {
+  overflow: auto;
+  @include scrollbar();
+  padding-right: 20px;
+
+  &__list {
+
+    > li {
+      @include _flexbox();
+      padding: 24px 0;
+      border-bottom: 1px solid $color-gray-light;
+
+      &:first-child {
+        padding-top: 0px;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &:not(:last-child) {
+
+      }
+
+    }
+
+    &-left {
+      $width-image: 40px;
+
+      @include _flexbox();
+
+      &-image {
+        width: $width-image;
+      }
+
+      &-text {
+        width: calc(100% - #{$width-image});
+        padding: 0 0 0 16px;
+
+        &-title {
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 1.3;
+          margin: 0 0 2px 0;
+          padding: 0;
+        }
+
+        p {
+          font-weight: 300;
+          font-size: 14px;
+          line-height: 1.2;
+          padding: 0;
+          margin: 0;
+        }
+      }
+    }
+
+    &-right {
+      margin-left: auto;
+      text-align: right;
+
+      &-header {
+        @include _flexbox();
+        @include _align-items(center);
+        white-space: nowrap;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 1.1;
+        color: $color-black;
+        margin: 0 0 5px 0;
+
+        .badge {
+          $size: 10px;
+
+          width: $size;
+          height: $size;
+          backdrop-filter: blur(16.3097px);
+          border-radius: 3.125px;
+          margin: 0 7px 0 0;
+
+          &.green {
+            background-color: $color-green-alt;
+          }
+
+          &.orange {
+            background-color: $color-orange;
+          }
+
+          &.blue {
+            background-color: $color-blue;
+          }
+
+          &.green-light {
+            background-color: $color-green;
+          }
+
+        }
+
+      }
+
+      small {
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 1.2;
+      }
+    }
+
+  }
+
+}

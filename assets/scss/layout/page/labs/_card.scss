@@ -1,0 +1,205 @@
+.labs {
+  width: 100%;
+
+  &__slide {
+    width: 406px;
+  }
+
+  &__card {
+    background-color: $color-white;
+    padding: 45px 0 0 0;
+    width: 100%;
+
+    &-header {
+      @include _flexbox();
+      @include _justify-content(space-between);
+      margin: 0 0 40px 0;
+      min-height: 70px;
+
+      &--left {
+
+        &---title {
+          font-weight: 500;
+          font-size: 24px;
+          line-height: 1.5;
+          padding: 0 0 0 30px;
+          position: relative;
+          margin: 0;
+
+          &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 4px;
+            top: 8px;
+            bottom: 8px;
+            left: 0;
+            max-height: 50px;
+          }
+
+          &.indigo {
+
+            &::before {
+              background-color: $color-blue-indigo;
+            }
+
+          }
+
+          &.phiolent {
+
+            &::before {
+              background-color: $color-phiolent;
+            }
+
+          }
+
+          &.orange {
+
+            &::before {
+              background-color: $color-orange;
+            }
+
+          }
+
+          &.green {
+
+            &::before {
+              background-color: $color-green;
+            }
+
+          }
+
+        }
+
+      }
+
+      &--right {
+        @include _flexbox();
+        @include _flex-direction(column);
+        @include _align-items(flex-end);
+        @include _justify-content(space-between);
+        padding: 8px 30px 8px 0;
+
+        span {
+          font-weight: 300;
+          font-size: 16px;
+          line-height: 1.1;
+        }
+      }
+    }
+
+    &-body {
+
+    }
+
+    &-charts {
+
+      > li {
+
+        &:not(:last-child) {
+          margin: 0 0 30px 0;
+        }
+      }
+
+      &--item {
+        padding: 15px 0px 15px 0;
+        position: relative;
+        height: 110px;
+        @include _flexbox();
+        @include _align-items(flex-end);
+        width: 100%;
+        background-color: transparent;
+        transition: all 0.18s linear;
+
+        &:hover {
+          background-color: $color-blue-indigo;
+
+          &::after {
+            background-image: url("../images/chart-pattern-hover.png");
+          }
+
+          .labs__card-charts--item {
+
+            &---title {
+              color: $color-white;
+            }
+
+            &---var {
+              border-color: rgba(255, 255, 255, 0.3);
+              strong, small {
+                color: $color-white;
+              }
+            }
+          }
+
+          .apexcharts-line {
+            stroke: $color-white;
+          }
+
+        }
+
+        .apexcharts-line {
+          transition: all 0.18s linear;
+        }
+
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          left: 0;
+          right: 0;
+          height: 20px;
+          bottom: 25px;
+          background: transparent url("../images/chart-pattern.png") left center repeat-x;
+          z-index: 1;
+        }
+
+        &---title {
+          font-weight: 300;
+          font-size: 18px;
+          line-height: 1.1;
+          position: absolute;
+          z-index: 2;
+          left: 30px;
+          top: 15px;
+          transition: all 0.18s linear;
+        }
+
+        &---var {
+          position: absolute;
+          z-index: 3;
+          top: 15px;
+          right: 30px;
+          @include _flexinline();
+          @include _align-items(flex-start);
+          bottom: 15px;
+          border-right: 0.8px dashed rgba(0, 0, 0, .30);
+          padding: 0 12px 0 0;
+
+          strong {
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 1;
+            padding: 0 5px 0 0;
+            transition: all 0.18s linear;
+          }
+
+          small {
+            font-weight: 275;
+            font-size: 12px;
+            line-height: 1.5;
+            transition: all 0.18s linear;
+          }
+        }
+
+        &---chart {
+          width: calc(100% - 30px);
+          position: relative;
+          z-index: 2;
+        }
+      }
+    }
+
+  }
+
+}

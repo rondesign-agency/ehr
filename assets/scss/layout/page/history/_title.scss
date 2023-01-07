@@ -1,0 +1,49 @@
+.history {
+
+  &__title {
+
+    &-title {
+      width: 50%;
+    }
+
+    &-search {
+      width: 50%;
+
+      &--form {
+        @extend .widget__header-left-search;
+        margin-left: 0;
+        max-width: none;
+
+        button {
+
+          &[type=submit] {
+            background-image: url("../images/icons/search-small-black.svg");
+          }
+
+        }
+
+        input {
+
+          &[type=text] {
+            padding-right: 30px;
+            padding-left: 50px;
+            font-size: 18px;
+            font-weight: 300;
+            color: $color-black;
+
+            @include placeholder {
+              font-size: 18px;
+              font-weight: 300;
+              color: $color-black;
+            }
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
